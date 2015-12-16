@@ -94,7 +94,6 @@ def load_user(uid):
 def create_app(config):
 
     app = Flask(__name__, static_url_path='', static_folder=STATIC_PATH)
-    import pdb; pdb.set_trace()
     init_app_config(app, config)
     init_logger(app)
 
