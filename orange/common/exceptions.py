@@ -1,0 +1,2 @@
+class CommonBaseException(Exception):
+    pass
