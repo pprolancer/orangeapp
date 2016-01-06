@@ -1,4 +1,4 @@
-from orange.conf import config
-from orange.app import create_app
+from orange.myproject.conf import config
+from orange.myproject.app import create_app
 
 application = create_app(config)

@@ -4,7 +4,7 @@ import datetime
 import decimal
 from sqlalchemy.ext.declarative import declarative_base
 
-from orange.common.exceptions import CommonBaseException
+from orange.myproject.common.exceptions import CommonBaseException
 
 Base = declarative_base()
 

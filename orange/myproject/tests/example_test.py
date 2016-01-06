@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import unittest
 
-from orange.tests import SqlAlchemyTest
-from orange.db import new_session
-from orange.models.user import User
+from orange.myproject.tests import SqlAlchemyTest
+from orange.myproject.db import new_session
+from orange.myproject.models.user import User
 
 
 class SampleSqlAlchemyTest(SqlAlchemyTest):

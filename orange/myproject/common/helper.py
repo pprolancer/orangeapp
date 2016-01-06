@@ -234,7 +234,7 @@ def has_permissions(permissions, abort=False):
 
 
 def permission_required(permissions, method=None):
-    from orange.models.user import RolePermission
+    from orange.myproject.models.user import RolePermission
     if not isinstance(permissions, (list, tuple)):
         permissions = [permissions]
     RolePermission.ALL_PERMISSIONS.update(permissions)

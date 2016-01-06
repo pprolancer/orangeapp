@@ -3,13 +3,16 @@ import sys
 import logging
 from flask import Flask, Blueprint, redirect
 from flask.ext.login import LoginManager
+from flexrest import FlexRestManager
 
-from orange.conf import config
-from orange.db import global_session
-from orange.models.user import User
-from orange.common.helper import init_flask_logger, \
+from orange.myproject.conf import config
+from orange.myproject.db import global_session
+from orange.myproject.models.user import User
+from orange.myproject.models import Base
+from orange.myproject.common.helper import init_flask_logger, \
     jsonify_status_string, login_required
-from orange.app.api import login_api_key, basic_unauthorized
+from orange.myproject.app.api import login_api_key, basic_unauthorized
+from orange.myproject.app.api.session.rest_api import session as session_rest
 
 
 general = Blueprint('general', __name__)
@@ -38,6 +41,7 @@ API_URL_PREFIX = config.get('app', 'API_URL_PREFIX')
 
 BLUEPRINTS = [
     (general, ''),
+    session_rest
 ]
 
 
@@ -106,6 +110,10 @@ def create_app(config):
     lm.session_protection = "strong"
     # this patch needs because chrome will ignore cookies when using ip.
     app.session_interface.get_cookie_domain = lambda _app: None
+
+    flex = FlexRestManager(db_base=Base, db_session_callback=global_session)
+    flex.init_app(app)
+
     register_blueprints(app, BLUEPRINTS)
 
     @app.after_request

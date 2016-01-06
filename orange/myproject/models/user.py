@@ -5,8 +5,8 @@ from sqlalchemy.ext.associationproxy import association_proxy
 from sqlalchemy import Column, Integer, DateTime, String, Boolean, Unicode, \
     ForeignKey, UniqueConstraint, event
 
-from orange.models import Base, ModelValueError
-from orange.common.helper import current_datetime, random_id
+from orange.myproject.models import Base, ModelValueError
+from orange.myproject.common.helper import current_datetime, random_id
 
 
 def api_key_gen():
@@ -47,7 +47,7 @@ class User(Base):
 
     @staticmethod
     def validate_username(target, value, oldvalue, initiator):
-        if value in ('order', 'and', 'or'):
+        if value in ('order', 'and', 'or', 'key'):
             raise ModelValueError('Invalid username: [%s]' % value)
 
     def is_authenticated(self):

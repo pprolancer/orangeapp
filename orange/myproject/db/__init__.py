@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 
 from sqlalchemy.orm import sessionmaker
 
-from orange.conf import config
+from orange.myproject.conf import config
 
 engine = None
 DBSession = None

@@ -1,6 +1,6 @@
 import logging
 import os
-from orange.conf import config
+from orange.myproject.conf import config
 from logging.handlers import RotatingFileHandler
 
 loggers = {}

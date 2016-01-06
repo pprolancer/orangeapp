@@ -2,13 +2,13 @@ import os
 from decimal import Decimal
 from ConfigParser import SafeConfigParser, NoOptionError
 
-PROJECT_BASE_PATH = os.path.dirname(os.path.dirname(
-    os.path.dirname(os.path.abspath(__file__))))
+PROJECT_BASE_PATH = os.path.dirname(os.path.dirname(os.path.dirname(
+    os.path.dirname(os.path.abspath(__file__)))))
 
 DEFAULT_CONF_PATH = os.path.join(PROJECT_BASE_PATH,
-                                 'orange/conf/config.ini')
+                                 'orange/myproject/conf/config.ini')
 CUSTOM_CONF_PATH = os.getenv('ORANGEAPP_CONFIG_PATH', '') or \
-    '/etc/orange/orangeapp/config.ini'
+    '/etc/orange/myproject/config.ini'
 
 
 class NoDefault:

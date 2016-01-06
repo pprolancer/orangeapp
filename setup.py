@@ -3,44 +3,45 @@ from setuptools import setup, find_packages
 __version__ = 'dev'
 
 setup(
-    name='orangeapp',  # replace name of your project here
+    name='myproject',  # replace name of your project here
     version=__version__,
     author='pprolancer@gmail.com',
     description='Orange App',
     packages=find_packages(),
     include_package_data=True,
     data_files=[
-        ('/etc/orange/orangeapp',
+        ('/etc/orange/myproject',
          ['orange/conf/config.ini']),
     ],
     entry_points={
         'console_scripts': [
-            'orangeapp_db = orange.scripts.database:main',
+            'myproject_db = orange.myproject.scripts.database:main',
         ],
     },
     dependency_links=[
     ],
     install_requires=[
-        'simplejson',
-        'uwsgi',
-        'flask',
+        'flexrest',
+        'flask-sqlalchemy',
+        'flask-testing',
         'flask-login',
         'flask-principal',
-        'flask-testing',
-        'formencode',
+        'flask',
+        'sqlalchemy-migrate',
+        'sqlalchemy-utils',
+        'sqlalchemy',
         'pycrypto',
+        'formencode',
         'bcrypt',
         'pytz',
+        'itsdangerous',
         'requests',
         'python-dateutil',
-        'sqlalchemy',
-        'sqlalchemy-utils',
-        'sqlalchemy-migrate',
-        'flask-sqlalchemy',
-        'itsdangerous',
         'httplib2',
         'ua-parser',
         'user-agents',
+        'uwsgi',
+        'simplejson',
     ],
     classifiers=['Development Status :: 1 - Production/Beta',
                  'Environment :: Web Environment',

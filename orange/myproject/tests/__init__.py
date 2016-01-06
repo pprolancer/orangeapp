@@ -8,9 +8,9 @@ import logging
 from flask.app import Flask
 from flask.ext.testing import TestCase
 
-from orange.db import switch_engine, create_all, drop_all, \
+from orange.myproject.db import switch_engine, create_all, drop_all, \
     new_session
-from orange.models import Base
+from orange.myproject.models import Base
 
 logger = logging.getLogger()
 

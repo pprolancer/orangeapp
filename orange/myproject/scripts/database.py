@@ -4,12 +4,11 @@ import imp
 import optparse
 from migrate.versioning import api
 from migrate.exceptions import DatabaseAlreadyControlledError
-
-from orange.common.shortcuts import get_or_create
-from orange.db import create_all, drop_all, new_session
-from orange.models import Base
-from orange.models.user import User, Role, RolePermission
-from orange.conf import config
+from orange.myproject.common.shortcuts import get_or_create
+from orange.myproject.db import create_all, drop_all, new_session
+from orange.myproject.models import Base
+from orange.myproject.models.user import User, Role, RolePermission
+from orange.myproject.conf import config
 
 
 SQLALCHEMY_DATABASE_URI = config.get('db', 'SQLALCHEMY_DATABASE_URI')
@@ -17,7 +16,7 @@ SQLALCHEMY_MIGRATE_REPO = config.getpath('db', 'SQLALCHEMY_MIGRATE_REPO')
 
 
 def init_db():
-    import orange.app  # load all permissions
+    import orange.myproject.app  # load all permissions
     print "++++ Initializing database with predefined records ..."
     ADMIN_PASS = 'test1234'
     dbs = new_session()

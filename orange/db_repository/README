@@ -1,8 +1,4 @@
 This is a database migration repository.
 
-follow this steps after you have any changes in database schems:
-1- run orange/scripts/db_migrate.py
-2- run orange/scripts/db_upgrade.py
-
 More information at
 http://code.google.com/p/sqlalchemy-migrate/

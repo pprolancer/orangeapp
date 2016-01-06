@@ -1,36 +1,36 @@
 #! /bin/bash
 if [ ! -n "$1" ]; then
-    echo "Syntax: orangeapp_deploy branch_name"
+    echo "Syntax: myproject_deploy branch_name"
     echo "Use \"master\" for default"
     exit 1
 fi
 
-service orangeapp_panel stop
+service myproject_panel stop
 sleep 1
 
 if [ -f "/opt/orange/env/bin/pip" ]; then
-    /opt/orange/env/bin/pip uninstall orangeapp -y
+    /opt/orange/env/bin/pip uninstall myproject -y
 fi
 
 
 mkdir -p /opt/orange/
-chmod 777 -R /usr/local/orange/orangeapp/log/
+chmod 777 -R /usr/local/orange/myproject/log/
 
-rm -rf /opt/orange/orangeapp
-git clone https://pprolancer@bitbucket.org/pprolancer/orangeapp.git -b $1 /opt/orange/orangeapp
+rm -rf /opt/orange/myproject
+git clone https://pprolancer@bitbucket.org/pprolancer/myproject.git -b $1 /opt/orange/myproject
 
 virtualenv /opt/orange/env
-cd /opt/orange/orangeapp
+cd /opt/orange/myproject
 ../env/bin/python setup.py install
 
 #service postgresql restart
 
 echo "+++ Running migration upgrade..."
-# ../env/bin/orangeapp_db --upgrade
+# ../env/bin/myproject_db --upgrade
 
 echo "+++ Running web server..."
 service nginx restart
-service orangeapp_panel start
+service myproject_panel start
 
 echo
 echo "Finished!"

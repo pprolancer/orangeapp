@@ -57,7 +57,7 @@ class RestClient(object):
 
 
 def test_client():
-    server_url = 'http://orangeapp.com'
+    server_url = 'http://myproject.com'
     api_key = 'xxxxx'
     client = RestClient(server_url, api_key)
 
