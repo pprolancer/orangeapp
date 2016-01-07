@@ -12,7 +12,7 @@ fi
 echo "Creating project dir ..."
 mkdir -p $PROJECT-project
 mkdir -p $PROJECT-project/$COMPANY/$PROJECT
-cp -a LICENSE MANIFEST.in README.md requirements.txt run.py setup.py $PROJECT-project
+cp -a LICENSE MANIFEST.in README.rst requirements.txt run.py setup.py $PROJECT-project
 cp -a orange/__init__.py $PROJECT-project/$COMPANY
 cp -a orange/myproject/* $PROJECT-project/$COMPANY/$PROJECT
 cp -a utils $PROJECT-project/

@@ -24,3 +24,8 @@ Create yourself project
     $ cd orangeapp
     $ ./create.sh your_project your_company
     $ mv ./your_project-project to_your_workspace
+    $ cd to_your_workspace/your_project-project
+    $ run env PYTHONPATH=to_your_workspace/your_project-project ./env/bin/python run.py
+    $ open http://localhost:5001 on browser
+    $ open http://localhost:5001/api/v1/session on browser with username: admin and password: test1234
+
