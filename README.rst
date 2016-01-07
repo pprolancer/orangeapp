@@ -1,7 +1,9 @@
 Orange App
 ========
 
-Orange App is a blank structure for a web service using Rest API.
+Orange App is a blank structure for a web service using Rest API + Flask + sqlalchemy.
+you can use a clone of this project to start your new project.
+
 
 Directory Structure
 -------------------
@@ -21,4 +23,4 @@ Create yourself project
     $ git clone https://github.com/pprolancer/orangeapp.git
     $ cd orangeapp
     $ ./create.sh your_project your_company
-    $ mv your_project-project to_your_workspace
+    $ mv ./your_project-project to_your_workspace
