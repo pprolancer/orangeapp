@@ -22,6 +22,7 @@ mv $PROJECT-project/utils/uwsgi/myproject_uwsgi.ini $PROJECT-project/utils/uwsgi
 cd $PROJECT-project
 
 grep -rli 'myproject' * | xargs -i@ sed -i "s/myproject/$PROJECT/g" @
+grep -rli 'orange' * | xargs -i@ sed -i "s/orange/$COMPANY/g" @
 echo "+++ Created your project at $PROJECT-project"
 echo "Creating your environment ..."
 virtualenv env
