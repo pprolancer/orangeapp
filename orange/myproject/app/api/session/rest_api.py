@@ -35,13 +35,14 @@ class SessionRestApiHandler(RestApiHandler):
 
     def login(self):
         data = self.validate_data(LoginSchema)
-        login = data['login']
+        username = data['username']
         password = data['password']
         remember = (data.get('remember', False) is True)
 
         dbs = self.get_db_session()
 
-        user = self.get_query(dbs, User).filter(User.login == login).first()
+        user = self.get_query(dbs, User).filter(User.username == username
+                                                ).first()
         if not user or not user.check_password(password):
             return self.jsonify_status(403, 'Login failed',
                                        reason='Wrong username or password')
