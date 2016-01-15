@@ -66,7 +66,7 @@ def init_app_config(app, config):
     cfg.SQLALCHEMY_DATABASE_URI = config.get('db', 'SQLALCHEMY_DATABASE_URI')
     cfg.MAX_CONTENT_LENGTH = config.getint('app', 'MAX_CONTENT_LENGTH')
     cfg.DEBUG = config.getboolean('app', 'DEBUG')
-    server_name = os.getenv('POOLCONTROL_SERVER_URL', '')
+    server_name = os.getenv('ORANGEAPP_SERVER_URL', '')
     if server_name:
         cfg.SERVER_NAME = server_name
         config.set('app', 'SERVER_NAME', server_name)
