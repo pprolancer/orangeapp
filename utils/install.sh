@@ -44,7 +44,6 @@ echo "+++ Installing database..."
 echo "Restarting Server..."
 service nginx restart
 service myproject_panel restart
-service myproject_celery restart
 
 echo
 echo "Finished!"
